@@ -9,9 +9,9 @@ public class Magicien {
 
     public static void magicien(){
 
-        int health = 50;
-        System.out.println("I'm the magician");
-        System.out.println("I've "+health+" pv");
+        HealthPoint health = new HealthPoint();
+
+        System.out.println("I'm the magician "+"("+health.healthM+" pv"+")");
         System.out.println("Choose the WaterFlesk if you wan to beat him.");
     }
 
