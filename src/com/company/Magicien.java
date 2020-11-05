@@ -1,25 +1,24 @@
 package com.company;
-
 import java.util.Scanner;
 
 public class Magicien {
 
-    //si pas waterflask : réattaque le héros
-
     public static void magicien(){
 
         Scanner sc = new Scanner(System.in);
-
-        // appelle les variables health, waterflask et damage dans des classes différentes
-        HealthPoint health = new HealthPoint();
+        Hero health = new Hero();
+        int healthM = 20;
         WaterFlask waterFlask = new WaterFlask();
-        Flash damageF = new Flash();
 
-        System.out.println("It's a magician "+"("+health.healthM+" pv"+")");
+        //Introduction de l'ennemi et ce dernier attaque d'emblée le héros
+
+        System.out.println("It's a magician "+"("+healthM+" pv"+")");
+        System.out.println("He attacks you");
+        health.healthH = health.healthH - FlashDamage();
+        System.out.println(health.healthH + " PV left");
         System.out.println("Choose the WaterFlesk if you want to beat him.");
 
         //Combat au tour par tour
-
         do {
             System.out.println(" ");
             System.out.println("Choose your weapon : ");
@@ -27,26 +26,36 @@ public class Magicien {
 
             String input = sc.nextLine();
 
+            //si l'utilisateur rentre la bonne entrée
             if (input.contentEquals("WaterFlask")) {
                 System.out.println("You've chosen WaterFlask.");
-                health.healthM = health.healthM - waterFlask.waterFlask;
+                healthM = healthM - waterFlask.waterFlask;
                 System.out.println("You've hitten him : -"+waterFlask.waterFlask+" PV.");
-                System.out.println(health.healthM + " PV left");
+                System.out.println(healthM + " PV left");
+
             } else {
+
+                //si l'utilisateur rentre la mauvaise entrée
                 System.out.println("The magicien hits you.");
-                health.healthH = health.healthH - damageF.damage;
+               health.healthH = health.healthH - FlashDamage();
                 System.out.println(health.healthH + " PV left");
             }
 
-            if (health.healthM == 0){
+            if (healthM == 0){
                 generateRandomly.generateEnemyRandomly();
             }
             else if(health.healthH == 0){
                 System.out.println("You loose ! Sorry, it's the end of the adventure for you.");
             }
 
-        } while (health.healthM != 0 && health.healthH != 0);
+        } while (healthM != 0 && health.healthH != 0);
 
+
+    }
+
+    //point de dommage que cause le magicien au héros
+    private static int FlashDamage() {
+        return 20;
     }
 
 }
