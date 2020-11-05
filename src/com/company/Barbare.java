@@ -15,8 +15,8 @@ public class Barbare {
         Scanner sc = new Scanner(System.in);
         Hero health = new Hero();
         int healthB = 20;
+        var chance = Math.random();
 
-        // appelle les variables health, waterflask et damage dans des classes différentes
         Sword weapon = new Sword();
 
         System.out.println("It's a barbarian "+"("+healthB+" pv"+")");
@@ -39,34 +39,42 @@ public class Barbare {
                 healthB = healthB - weapon.sword;
                 System.out.println("You've hitten him : -"+weapon.sword+" PV.");
                 System.out.println(healthB + " PV left");
+
             } else {
-                System.out.println("The barbarian hits you.");
-                health.healthH = health.healthH - AxeDamage();
+
+                //30% de chance de faire un coup critique
+
+                if (chance < 0.7){
+                    System.out.println("This is critical !");
+                    health.healthH = health.healthH - AxeDamage()*2;
+                }
+                else {
+                    System.out.println("The barbarian hits you.");
+                    health.healthH = health.healthH - AxeDamage();
+                }
                 System.out.println(health.healthH + " PV left");
+
             }
 
+            //retourne à la classe qui génère le combat aléatoirement
             if (healthB == 0){
                 System.out.println("You win ! Go to the next room");
-            }
-            else if(health.healthH == 0){
-                System.out.println("You loose ! Sorry, it's the end of the adventure for you.");
-            }
-
-            if (healthB == 0){
                 generateRandomly.generateEnemyRandomly();
             }
             else if(health.healthH == 0){
                 System.out.println("You loose ! Sorry, it's the end of the adventure for you.");
             }
 
+
         } while (healthB != 0 && health.healthH != 0);
 
 
     }
 
+    //point de dommage que cause le barbare au héros
+
     private static int AxeDamage() {
-       int damage = 20;
-        return damage;
+        return 20;
     }
 
 }
