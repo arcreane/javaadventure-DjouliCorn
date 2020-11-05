@@ -9,7 +9,9 @@ public class Barbare {
 
     public static void barbare(){
 
-        System.out.println("I'm the barbarian");
+        HealthPoint health = new HealthPoint();
+
+        System.out.println("I'm the barbarian "+"("+health.healthB+" pv)");
         System.out.println("Choose the sword if you want to beat him.");
 
     }

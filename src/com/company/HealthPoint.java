@@ -1,8 +1,12 @@
 package com.company;
 
 public class HealthPoint {
-    // Les points de vie des personnages
 
+    //pv magicien
     int healthM = 20;
-
+    //pv barbare
+    int healthB = 20;
+    //pv Heros
+    int healthH = 200;
 }
+
