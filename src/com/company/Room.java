@@ -6,6 +6,7 @@ public class Room {
 
     public static void welcomeRoom(){
 
+        //pop un ennemi au hasard dans la room, soit le magicien, soit le barbare
         generateRandomly.generateEnemyRandomly();
 
     }
@@ -13,10 +14,7 @@ public class Room {
 
 
 
-    //array de 5 rooms
-    //appelle soit la méthode magicien, soit barbare en random
-    //appelle la méthode héros
-    //attaque sur le héros
+
 
 
 

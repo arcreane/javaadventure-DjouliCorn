@@ -8,7 +8,7 @@ public class Main {
         System.out.println(" ");
         System.out.println("An ennemy appear.");
 
-        //appelle la méthode room
+        //appelle la salle
         Room.welcomeRoom();
 
 

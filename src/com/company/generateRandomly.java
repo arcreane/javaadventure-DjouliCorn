@@ -6,6 +6,8 @@ public class generateRandomly {
 
     public static void generateEnemyRandomly() {
 
+        //choisis un ennemi au hasard, soit le magicien, soit le barbare
+
         Random rd = new Random();
         int callEnemy = rd.nextInt(100);
 
