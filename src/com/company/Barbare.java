@@ -18,7 +18,7 @@ public class Barbare {
         Sword weapon = new Sword();
         Flash damageF = new Flash();
 
-        System.out.println("I'm the barbarian "+"("+health.healthM+" pv"+")");
+        System.out.println("It's a barbarian "+"("+health.healthM+" pv"+")");
         System.out.println("Choose the sword if you wan to beat him.");
 
         //Combat au tour par tour
@@ -43,6 +43,13 @@ public class Barbare {
 
             if (health.healthB == 0){
                 System.out.println("You win ! Go to the next room");
+            }
+            else if(health.healthH == 0){
+                System.out.println("You loose ! Sorry, it's the end of the adventure for you.");
+            }
+
+            if (health.healthM == 0){
+                generateRandomly.generateEnemyRandomly();
             }
             else if(health.healthH == 0){
                 System.out.println("You loose ! Sorry, it's the end of the adventure for you.");

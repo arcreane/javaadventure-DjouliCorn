@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Magicien {
 
     //si pas waterflask : réattaque le héros
+
     public static void magicien(){
 
         Scanner sc = new Scanner(System.in);
@@ -14,8 +15,8 @@ public class Magicien {
         WaterFlask waterFlask = new WaterFlask();
         Flash damageF = new Flash();
 
-        System.out.println("I'm the magician "+"("+health.healthM+" pv"+")");
-        System.out.println("Choose the WaterFlesk if you wan to beat him.");
+        System.out.println("It's a magician "+"("+health.healthM+" pv"+")");
+        System.out.println("Choose the WaterFlesk if you want to beat him.");
 
         //Combat au tour par tour
 
@@ -38,7 +39,7 @@ public class Magicien {
             }
 
             if (health.healthM == 0){
-                System.out.println("You win ! Go to the next room");
+                generateRandomly.generateEnemyRandomly();
             }
             else if(health.healthH == 0){
                 System.out.println("You loose ! Sorry, it's the end of the adventure for you.");

@@ -6,10 +6,15 @@ public class Main {
 
         System.out.println("Welcome to the dungeon :");
         System.out.println(" ");
-        System.out.println("An ennemy appear.");
-
+        System.out.println("An ennemy appear :");
         //appelle la salle
-        Room.welcomeRoom();
+        generateRandomly.generateEnemyRandomly();
+
+
+
+
+
+
 
 
     }
