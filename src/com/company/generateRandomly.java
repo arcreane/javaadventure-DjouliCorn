@@ -9,9 +9,9 @@ public class generateRandomly {
         //choisis un ennemi au hasard, soit le magicien, soit le barbare
 
         Random rd = new Random();
-        int callEnemy = rd.nextInt(100);
+        int callEnemy = rd.nextInt(10);
 
-        if (callEnemy < 50) {
+        if (callEnemy < 5) {
             Magicien.magicien();
         }
         else {
